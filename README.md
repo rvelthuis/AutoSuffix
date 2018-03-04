@@ -4,11 +4,30 @@ If you must maintain one package for several different versions of Delphi, then 
 to have a new project for each version with a different `{$LIBSUFFIX }` for the current version, i.e. for 
 Tokyo, the lib suffix is `250`, for Berlin it is `240`, etc.
 
-This simple wizard adds a menu item to the project manager, with the title "Add Version Suffix", under
-the "Rename" context menu item. This allows you to set the lib suffix for a package to the suffix that
-is generally used for this version, so `'250'` for Tokyo, etc.
+It would be ideal, if we could have a `{$LIBSUFFIX AUTO}`, so the IDE adds a suffix. I tried using an
+include file with something like:
 
-## Files:
+    {$IFDEF VER320} {$LIBSUFFIX '250'} {$ENDIF}
+
+and so on, and put that in the package source, but any change to the package would make the IDE
+remove that and use the suffix (if any) it found in the .dproj file.
+
+This problem is not new. It has been discussed various times on several forums and communities. On 
+Stack Overflow, someone (called LaKraven) set out to create a wizard to solve this, but it can't
+be found anymore. All the websites that supposedly have it have been removed.
+
+So I wrote this simple wizard myself. It adds a menu item to the project manager, with the title "Add Version Suffix", under
+the "Rename" context menu item. This allows you to set the lib suffix for a package to the suffix that
+is generally used for this version, so `'250'` for Tokyo, `'240'` for Berlin, etc.
+
+## Installation
+
+Just open the package AutoSuffix.dproj in your IDE, select the project in the Project Manager and
+Select the `Install` menu item from the context menu. If all is well, this installs the expert
+and adds one menu item to the context menu of the Project Manager: `Add Version Suffix`, under the `Rename` item. This
+menu item only appears if the project is a package.
+
+## Files
 
 | File | Contents | 
 | --- | --- |
