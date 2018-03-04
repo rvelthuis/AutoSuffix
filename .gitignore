@@ -1,3 +1,6 @@
 *.dcu
 *.dproj.local
 __history/**
+*.~dsk
+*.dsk
+*.stat
