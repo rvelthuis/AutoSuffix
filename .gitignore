@@ -4,3 +4,6 @@ __history/**
 *.~dsk
 *.dsk
 *.stat
+._**
+*.identcache
+
