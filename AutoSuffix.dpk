@@ -5,7 +5,7 @@ package AutoSuffix;
 {$ALIGN 8}
 {$ASSERTIONS ON}
 {$BOOLEVAL OFF}
-{$DEBUGINFO OFF}
+{$DEBUGINFO ON}
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
@@ -26,7 +26,6 @@ package AutoSuffix;
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Velthuis.AutoSuffix: Automatically add suffix to package project'}
-{$LIBSUFFIX '240'}
 {$IMPLICITBUILD ON}
 
 requires
